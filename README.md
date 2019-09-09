@@ -1,8 +1,6 @@
-# on-dispatch-trigger-workflow 
+# on-dispatch-dump-contexts
 
-This repository is an example of triggering a GitHub Actions workflow via the [repository dispatch event](https://developer.github.com/v3/repos/#creating-a-repository-dispatch-event). 
-
-The repository dispatch event will trigger a new workflow execution that creates or updates your repo's `dates.txt` with a new date.
+This repository is an example of triggering a GitHub Actions workflow via the [repository dispatch event](https://developer.github.com/v3/repos/#creating-a-repository-dispatch-event) to dump all available contexts.
 
 ## Usage
 
@@ -15,5 +13,5 @@ The repository dispatch event will trigger a new workflow execution that creates
 curl -v -H "Accept: application/vnd.github.everest-preview+json" \
   -H "Authorization: token $TOKEN" \
   https://api.github.com/repos/:owner/:repo/dispatches \
-  -d '{"event_type":"update-dates-file"}'
+  -d '{"event_type":"dump-contexts"}'
 ```
