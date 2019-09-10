@@ -15,6 +15,12 @@ jobs:
   
     # https://help.github.com/en/articles/workflow-syntax-for-github-actions#jobsjob_idsteps
     steps:
+
+      # http://manpages.ubuntu.com/manpages/bionic/man1/printenv.1.html
+      - name: List all environment variables
+        run: printenv
+
+      # https://help.github.com/en/articles/contexts-and-expression-syntax-for-github-actions#example-printing-context-information-to-the-log-file
       - name: Dump GitHub context
         env:
           GITHUB_CONTEXT: ${{ toJson(github) }}
