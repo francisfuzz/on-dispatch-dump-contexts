@@ -54,4 +54,6 @@ jobs:
       - name: Dump Linux context
         if: runner.os == 'Linux'
         run: |
-          uname -or
+          uname -a
+          cat /proc/version
+          lsb_release -a
