@@ -51,3 +51,7 @@ jobs:
         env:
           MATRIX_CONTEXT: ${{ toJson(matrix) }}
         run: echo "$MATRIX_CONTEXT"
+      - name: Dump Linux context
+        if: runner.os == 'Linux'
+        run: |
+          uname -or
