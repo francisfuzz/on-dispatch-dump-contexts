@@ -58,11 +58,11 @@ jobs:
           cat /proc/version
           lsb_release -a
       - name: Dump macOS context
-        if: runner.os = 'macOS'
+        if: runner.os == 'macOS'
         run: |
           sw_vers
           uname-a
           system_profiler -detailLevel full
       - name: Dump Windows context
-        if: runner.os = 'Windows'
+        if: runner.os == 'Windows'
         run: Get-Host
