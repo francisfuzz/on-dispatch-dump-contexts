@@ -61,7 +61,7 @@ jobs:
         if: runner.os == 'macOS'
         run: |
           sw_vers
-          uname-a
+          uname -a
           system_profiler -detailLevel full
       - name: Dump Windows context
         if: runner.os == 'Windows'
