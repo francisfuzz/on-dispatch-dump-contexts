@@ -57,3 +57,9 @@ jobs:
           uname -a
           cat /proc/version
           lsb_release -a
+      - name: Dump macOS context
+        if: runner.os = 'macOS'
+        run: |
+          sw_vers
+          uname-a
+          system_profiler -detailLevel full
