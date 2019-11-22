@@ -63,6 +63,7 @@ jobs:
           sw_vers
           uname -a
           system_profiler -detailLevel full
+          ls -alrth /Applications
       - name: Dump Windows context
         if: runner.os == 'Windows'
         run: Get-Host
