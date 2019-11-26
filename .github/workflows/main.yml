@@ -54,6 +54,16 @@ jobs:
       - name: Dump Linux context
         if: runner.os == 'Linux'
         run: |
+          # identity
+          whoami
+          
+          # Get the UID (User ID)
+          id -u
+          
+          # Get the GID (Group ID)
+          id -g
+
+          # system
           uname -a
           cat /proc/version
           lsb_release -a
