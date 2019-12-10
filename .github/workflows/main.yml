@@ -67,6 +67,9 @@ jobs:
           uname -a
           cat /proc/version
           lsb_release -a
+          
+          # Check process limit
+          ulimit -a 
       - name: Dump macOS context
         if: runner.os == 'macOS'
         run: |
