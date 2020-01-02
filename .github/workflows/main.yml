@@ -67,6 +67,7 @@ jobs:
           uname -a
           cat /proc/version
           lsb_release -a
+          lscpu
           
           # Check process limit
           ulimit -a 
