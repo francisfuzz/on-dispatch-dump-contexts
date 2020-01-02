@@ -67,8 +67,12 @@ jobs:
           uname -a
           cat /proc/version
           lsb_release -a
-          lscpu
           
+          # Display information about the CPU architecture
+          # http://manpages.ubuntu.com/manpages/xenial/man1/lscpu.1.html
+          lscpu
+          lscpu -p
+
           # Check process limit
           ulimit -a 
       - name: Dump macOS context
