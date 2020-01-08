@@ -52,8 +52,6 @@ jobs:
           MATRIX_CONTEXT: ${{ toJson(matrix) }}
         run: echo "$MATRIX_CONTEXT"
 
-      - run: ping -n 10 google.com
-
       - name: Dump Linux context
         if: runner.os == 'Linux'
         run: |
@@ -78,6 +76,8 @@ jobs:
 
           # Check process limit
           ulimit -a 
+
+          ping -c 5 google.com
       - name: Dump macOS context
         if: runner.os == 'macOS'
         run: |
@@ -85,6 +85,10 @@ jobs:
           uname -a
           system_profiler -detailLevel full
           ls -alrth /Applications
+          
+          ping -c 5 google.com
       - name: Dump Windows context
         if: runner.os == 'Windows'
-        run: Get-Host
+        run: |
+          Get-Host
+          ping /n 10 google.com
