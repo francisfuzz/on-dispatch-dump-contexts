@@ -52,7 +52,7 @@ jobs:
           MATRIX_CONTEXT: ${{ toJson(matrix) }}
         run: echo "$MATRIX_CONTEXT"
 
-      - run: ping -n 5 www.google.com
+      - run: ping -n 10 google.com
 
       - name: Dump Linux context
         if: runner.os == 'Linux'
