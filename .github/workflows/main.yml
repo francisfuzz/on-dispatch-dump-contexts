@@ -77,7 +77,6 @@ jobs:
           # Check process limit
           ulimit -a 
 
-          ping -c 5 google.com
       - name: Dump macOS context
         if: runner.os == 'macOS'
         run: |
@@ -85,10 +84,8 @@ jobs:
           uname -a
           system_profiler -detailLevel full
           ls -alrth /Applications
-          
-          ping -c 5 google.com
+
       - name: Dump Windows context
         if: runner.os == 'Windows'
         run: |
           Get-Host
-          ping /n 10 google.com
