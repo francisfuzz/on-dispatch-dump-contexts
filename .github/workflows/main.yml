@@ -80,10 +80,15 @@ jobs:
       - name: Dump macOS context
         if: runner.os == 'macOS'
         run: |
+          # Check Swift version
+          swift --version
+          
+          # Check system information
           sw_vers
           uname -a
           system_profiler -detailLevel full
           ls -alrth /Applications
+
 
       - name: Dump Windows context
         if: runner.os == 'Windows'
